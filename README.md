@@ -1,55 +1,58 @@
-# EPD-nRF51
+# EPD42
 
-4.2 寸电子墨水屏固件，带有一个[网页版上位机](https://tsl0922.github.io/EPD-nRF51/)，可以通过蓝牙传输图像到墨水屏。
+[English](README_EN.md)
+
+4.2 寸电子墨水屏固件，带有一个[网页版上位机](https://pengwon.github.io/epd42/)，可以通过蓝牙传输图像到墨水屏。
 
 理论上支持所有 nRF51 系列 MCU，内置 3 个微雪 4.2 寸墨水屏驱动（可切换），同时还支持自定义墨水屏到 MCU 的引脚映射，支持睡眠唤醒（NFC / 无线充电器）。
 
 ## 支持设备
 
-- 老五 4.2 寸价签，黑白双色版本
+硬件是对电商平台上4.2寸墨水屏价签hack而来，可以[点此购买](https://item.taobao.com/item.htm?ft=t&id=874071462547)，支持黑白双色和黑白红三色两种版本。
 
-	```
-	MCU：nRF51822
-	RAM：16K
-	ROM：128K
+- 黑白双色版本
 
-	驱动：UC8176 (EPD_4in2)
-	屏幕引脚：0508090A0B0C0D
-	线圈引脚：07
-	```
+  ```
+  MCU：nRF51822
+  RAM：16K
+  ROM：128K
 
-	![](html/images/1.jpg)
+  驱动：UC8176 (EPD_4in2)
+  屏幕引脚：0508090A0B0C0D
+  线圈引脚：07
+  ```
 
-- 老五 4.2 寸价签，黑白红三色版本
+  ![](html/images/1.jpg)
 
-	```
-	MCU：nRF51802
-	RAM：16K
-	ROM：256K
+- 黑白红三色版本
 
-	驱动：UC8276C (EPD_4in2b_V2)
-	屏幕引脚：0A0B0C0D0E0F10
-	线圈引脚：09
-	LED引脚：03/04/05 （有三个 LED，任选一个使用）
-	```
+  ```
+  MCU：nRF51802
+  RAM：16K
+  ROM：256K
 
-	![](html/images/2.jpg)
+  驱动：UC8276C (EPD_4in2b_V2)
+  屏幕引脚：0A0B0C0D0E0F10
+  线圈引脚：09
+  LED引脚：03/04/05 （有三个 LED，任选一个使用）
+  ```
+
+  ![](html/images/2.jpg)
 
 默认驱动和引脚映射为黑白双色版本，其它版本需要切换驱动并修改引脚映射。
 
 ## 上位机
 
-地址：https://tsl0922.github.io/EPD-nRF51/ 
+地址：https://pengwon.github.io/epd42/ 
 
 ![](html/images/0.jpg)
 
-本项目自带一个基于浏览器蓝牙接口实现的网页版上位机，可通过上面网址访问，或者在本地直接双击打开 `html/index.html` 来使用。
+扫描上方二维码加入微信群，获取更多信息。
 
 ## 开发
 
 > **注意:**
-> - 必须使用 [Keil 5.36](https://img.anfulai.cn/bbs/96992/MDK536.EXE) 或以下版本，nRF51 SDK 只支持 V5 版本的 ARM 编译器，从 5.37 版本开始 Keil 已经不再内置 V5 版本编译器。
-> - `sdk10` 分支为旧版 SDK 代码归档（不再维护），好处是蓝牙协议栈占用的空间小一些，对于小 ROM 芯片友好一点点。
+> - 必须使用 [Keil 5.36](https://img.anfulai.cn/bbs/96992/MDK536.EXE) 或以下版本，nRF51 SDK 只支持 V5 版本的 ARM 编译器，从 5.37 版本开始 Keil 已经不再内置 V5 版本编译器，需要手动安装。
 
 项目配置有几个 `Target`：
 
@@ -69,5 +72,4 @@
 
 ## 致谢
 
-- 屏幕驱动代码来自微雪 [E-Paper Shield](https://www.waveshare.net/wiki/E-Paper_Shield)
-- 网页版上位机代码来自 [atc1441/ATC_TLSR_Paper](https://github.com/atc1441/ATC_TLSR_Paper)
+- 本项目基于 [EPD-nRF51](https://github.com/tsl0922/EPD-nRF51) 分叉而来，感谢原作者的分享和贡献。
