@@ -82,3 +82,5 @@ Keil/Objects/*
 RTE_Components.h
 EventRecorderStub.scvd
 JLinkLog.txt
+
+*.PrjPcbStructure
